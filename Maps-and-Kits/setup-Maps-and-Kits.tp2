@@ -1,0 +1,330 @@
+BACKUP   ~Maps-and-Kits/backup~    // location to store files for uninstall purposes
+//AUTHOR   ~~  // email address displayed if install fails
+SUPPORT ~~
+
+ALWAYS
+
+  INCLUDE ~Maps-and-Kits/lib/Divine/macros.tph~ // defines patch macro
+  INCLUDE ~Maps-and-Kits/lib/A7/a7#add_kit_ex.tpa~         // for ee kit features
+  INCLUDE ~%MOD_FOLDER%/lib/A7/functions.tph~
+  OUTER_SET bio = "-1"
+
+  ACTION_IF NOT VARIABLE_IS_SET cd_always THEN BEGIN
+
+    OUTER_SET cd_always = 1 // just do this part once per install
+
+    INCLUDE ~Maps-and-Kits/lib/Divine/ids_stuff.tph~             // ids fixes
+
+ACTION_DEFINE_ARRAY 9xnoconvert BEGIN END
+ACTION_DEFINE_ARRAY 9xreload BEGIN setup END
+
+  LAF HANDLE_CHARSETS
+    INT_VAR
+      infer_charsets = 1
+    STR_VAR
+      tra_path = EVAL ~%MOD_FOLDER%/language~
+      noconvert_array = 9xnoconvert
+      reload_array = 9xreload
+    END
+  
+  END
+
+END
+
+VERSION  ~0.1~
+
+README   ~Maps-and-Kits/readme-Maps-and-Kits.html~
+
+ASK_EVERY_COMPONENT
+
+AUTO_TRA ~Maps-and-Kits/language/%s~
+LANGUAGE
+  ~Francais~
+  ~french~
+  ~Maps-and-Kits/language/french/setup.tra~
+  ~Maps-and-Kits/language/french/Maps-and-Kits.tra~
+LANGUAGE
+  ~English~
+  ~english~
+  ~Maps-and-Kits/language/french/setup.tra~
+  ~Maps-and-Kits/language/french/Maps-and-Kits.tra~
+  ~Maps-and-Kits/language/english/setup.tra~
+  ~Maps-and-Kits/language/english/Maps-and-Kits.tra~
+
+
+
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// Kit removing components                          \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+/////                                                  \\\\\
+///// remove cleric kits, mod                          \\\\\
+/////                                                  \\\\\
+
+BEGIN @5000
+SUBCOMPONENT @5002
+GROUP @15
+
+LAF cd_mkr INT_VAR remove_orig = 0 STR_VAR class = c END
+
+/////                                                  \\\\\
+///// remove cleric kits, all                          \\\\\
+/////                                                  \\\\\
+
+BEGIN @5001
+SUBCOMPONENT @5002
+GROUP @15
+
+LAF cd_mkr INT_VAR remove_orig = 1 STR_VAR class = c END
+
+/////                                                  \\\\\
+///// remove druid kits, mod                           \\\\\
+/////                                                  \\\\\
+
+BEGIN @5000
+SUBCOMPONENT @5003
+GROUP @15
+
+LAF cd_mkr INT_VAR remove_orig = 0 STR_VAR class = d END
+
+/////                                                  \\\\\
+///// remove druid kits, all                           \\\\\
+/////                                                  \\\\\
+
+BEGIN @5001
+SUBCOMPONENT @5003
+GROUP @15
+
+LAF cd_mkr INT_VAR remove_orig = 1 STR_VAR class = d END
+
+/////                                                  \\\\\
+///// remove paladin kits, mod                         \\\\\
+/////                                                  \\\\\
+
+BEGIN @5000
+SUBCOMPONENT @5004
+GROUP @15
+
+LAF cd_mkr INT_VAR remove_orig = 0 STR_VAR class = p END
+
+/////                                                  \\\\\
+///// remove paladin kits, all                         \\\\\
+/////                                                  \\\\\
+
+BEGIN @5001
+SUBCOMPONENT @5004
+GROUP @15
+
+LAF cd_mkr INT_VAR remove_orig = 1 STR_VAR class = p END
+
+/////                                                  \\\\\
+///// remove ranger kits, mod                          \\\\\
+/////                                                  \\\\\
+
+BEGIN @5000
+SUBCOMPONENT @5005
+GROUP @15
+
+LAF cd_mkr INT_VAR remove_orig = 0 STR_VAR class = r END
+
+/////                                                  \\\\\
+///// remove ranger kits, all                          \\\\\
+/////                                                  \\\\\
+
+BEGIN @5001
+SUBCOMPONENT @5005
+GROUP @15
+
+LAF cd_mkr INT_VAR remove_orig = 1 STR_VAR class = r END
+
+/////                                                  \\\\\
+///// remove fighter kits, mod                          \\\\\
+/////                                                  \\\\\
+
+BEGIN @5000
+SUBCOMPONENT @5006
+GROUP @15
+
+LAF cd_mkr INT_VAR remove_orig = 0 STR_VAR class = f END
+
+/////                                                  \\\\\
+///// remove fighter kits, all                          \\\\\
+/////                                                  \\\\\
+
+BEGIN @5001
+SUBCOMPONENT @5006
+GROUP @15
+
+LAF cd_mkr INT_VAR remove_orig = 1 STR_VAR class = f END
+
+/////                                                  \\\\\
+///// remove mage kits, mod                          \\\\\
+/////                                                  \\\\\
+
+BEGIN @5000
+SUBCOMPONENT @5007
+GROUP @15
+
+LAF cd_mkr INT_VAR remove_orig = 0 STR_VAR class = m END
+
+/////                                                  \\\\\
+///// remove mage kits, all                          \\\\\
+/////                                                  \\\\\
+
+BEGIN @5001
+SUBCOMPONENT @5007
+GROUP @15
+
+LAF cd_mkr INT_VAR remove_orig = 1 STR_VAR class = m END
+
+/////                                                  \\\\\
+///// remove monk kits, mod                          \\\\\
+/////                                                  \\\\\
+
+BEGIN @5000
+SUBCOMPONENT @5008
+GROUP @15
+
+LAF cd_mkr INT_VAR remove_orig = 0 STR_VAR class = mn END
+
+/////                                                  \\\\\
+///// remove monk kits, all                          \\\\\
+/////                                                  \\\\\
+
+BEGIN @5001
+SUBCOMPONENT @5008
+GROUP @15
+
+LAF cd_mkr INT_VAR remove_orig = 1 STR_VAR class = mn END
+
+/////                                                  \\\\\
+///// remove thief kits, mod                          \\\\\
+/////                                                  \\\\\
+
+BEGIN @5000
+SUBCOMPONENT @5009
+GROUP @15
+
+LAF cd_mkr INT_VAR remove_orig = 0 STR_VAR class = t END
+
+/////                                                  \\\\\
+///// remove thief kits, all                          \\\\\
+/////                                                  \\\\\
+
+BEGIN @5001
+SUBCOMPONENT @5009
+GROUP @15
+
+LAF cd_mkr INT_VAR remove_orig = 1 STR_VAR class = t END
+
+/////                                                  \\\\\
+///// remove barde kits, mod                          \\\\\
+/////                                                  \\\\\
+
+BEGIN @5000
+SUBCOMPONENT @5010
+GROUP @15
+
+LAF cd_mkr INT_VAR remove_orig = 0 STR_VAR class = b END
+
+/////                                                  \\\\\
+///// remove barde kits, all                          \\\\\
+/////                                                  \\\\\
+
+BEGIN @5001
+SUBCOMPONENT @5010
+GROUP @15
+
+LAF cd_mkr INT_VAR remove_orig = 1 STR_VAR class = b END
+
+/////                                                  \\\\\
+///// remove sorcerer kits, mod                          \\\\\
+/////                                                  \\\\\
+
+BEGIN @5000
+SUBCOMPONENT @5011
+GROUP @15
+
+LAF cd_mkr INT_VAR remove_orig = 0 STR_VAR class = s END
+
+/////                                                  \\\\\
+///// remove sorcerer kits, all                          \\\\\
+/////                                                  \\\\\
+
+BEGIN @5001
+SUBCOMPONENT @5011
+GROUP @15
+
+LAF cd_mkr INT_VAR remove_orig = 1 STR_VAR class = s END
+
+/////                                                  \\\\\
+///// remove barbarian kits, mod                          \\\\\
+/////                                                  \\\\\
+
+BEGIN @5000
+SUBCOMPONENT @5012
+GROUP @15
+
+LAF cd_mkr INT_VAR remove_orig = 0 STR_VAR class = bn END
+
+/////                                                  \\\\\
+///// remove barbarian kits, all                          \\\\\
+/////                                                  \\\\\
+
+BEGIN @5001
+SUBCOMPONENT @5012
+GROUP @15
+
+LAF cd_mkr INT_VAR remove_orig = 1 STR_VAR class = bn END
+
+/////                                                  \\\\\
+///// remove shaman kits, mod                          \\\\\
+/////                                                  \\\\\
+
+BEGIN @5000
+SUBCOMPONENT @5013
+GROUP @15
+
+LAF cd_mkr INT_VAR remove_orig = 0 STR_VAR class = sh END
+
+/////                                                  \\\\\
+///// remove shaman kits, all                          \\\\\
+/////                                                  \\\\\
+
+BEGIN @5001
+SUBCOMPONENT @5013
+GROUP @15
+
+LAF cd_mkr INT_VAR remove_orig = 1 STR_VAR class = sh END
+
+//////////////////////////////
+// bgee.lua cheat table
+//////////////////////////////
+BEGIN @5100
+GROUP @14
+
+/* COPY_EXISTING ~bgee.lua~ ~override/bgee.lua~ */
+ 
+ 
+ /*COPY + ~~
+	SPRINT filenames_stringrefs_var ~~
+	SPRINT createEntry_var ~~
+	SPRINT fontcolors_var ~~
+	PATCH_INCLUDE ~%MOD_FOLDER%/lib/cheat_var.tph~
+	REPLACE_TEXTUALLY ~filenames_stringrefs[ %TAB%]*\[[ %TAB%]*'MALE\([0-9]+\)'~ ~filenames_stringrefs['BGMALE\1'~
+	REPLACE_TEXTUALLY ~filenames_stringrefs[ %TAB%]*\[[ %TAB%]*'FEMALE\([0-9]+\)'~ ~filenames_stringrefs['BGFEML\1'~
+	REPLACE_EVALUATE CASE_INSENSITIVE ~^[ %TAB%]*fontcolors\['\([A-Z0-9#_]+\)'\][ %TAB%]*=[ %TAB%]*'\([^']+\)'\([^%LNL%%WNL%]*\)~ BEGIN
+		PATCH_IF (NOT FILE_CONTAINS_EVALUATED (~bgee.lua~ ~^[ %TAB%]*fontcolors\['%MATCH1%'\]~)) BEGIN
+			SPRINT fontcolors_var ~%fontcolors_var%fontcolors['%MATCH1%'] = '%MATCH2%'%MATCH3%%LNL%~
+			//PATCH_PRINT ~fontcolors: %MATCH1% ; %MATCH2% ; %MATCH3%~
+		END
+	END ~~*/
+	
+/*INCLUDE ~%MOD_FOLDER%/lib/cheat_var.tph~*/
+
+INCLUDE ~%MOD_FOLDER%/lib/A7/misc.tph~

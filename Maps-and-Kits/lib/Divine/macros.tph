@@ -1,0 +1,55 @@
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// mod kit remover                                  \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+DEFINE_ACTION_FUNCTION cd_mkr
+  INT_VAR remove_orig = 0
+  STR_VAR class = "c"
+  BEGIN
+
+  ACTION_IF remove_orig = 1 THEN BEGIN
+
+    OUTER_SET last_kit = 0
+  
+  END ELSE BEGIN
+
+    COPY_EXISTING ~kitlist.2da~ ~override~ // look for kit descripts
+      COUNT_2DA_ROWS 9 rows
+      SET last_kit = 0
+      FOR (index = 2 ; index < rows ; ++index) BEGIN
+        READ_2DA_ENTRY index 1 8 name
+        PATCH_IF (("%name%" STRING_COMPARE_CASE "OHTYR" = 0) OR // bg2ee
+                  ("%name%" STRING_COMPARE_CASE "SUN_SOUL" = 0) OR // bgee
+                  ("%name%" STRING_COMPARE_CASE "OHTEMPUS" = 0) OR // iwdee
+                  ("%name%" STRING_COMPARE_CASE "BARBARIAN" = 0)) BEGIN // bg2/bgt/tutu
+          READ_2DA_ENTRY index 0 8 last_kit
+        END
+      END
+      BUT_ONLY
+
+  END
+
+  ACTION_FOR_EACH race IN d e g h he hl ho BEGIN
+  
+    ACTION_IF FILE_EXISTS_IN_GAME ~k_%class%_%race%.2da~ THEN BEGIN
+  
+      COPY_EXISTING ~k_%class%_%race%.2da~ ~override~
+        REPLACE_EVALUATE ~\([%LNL%%MNL%%WNL%]*[0-9]+[ %TAB%]+\)\([0-9]+\)~ BEGIN
+          PATCH_IF (MATCH2 > last_kit) BEGIN
+            SPRINT replace ""
+          END ELSE BEGIN
+            SPRINT replace "%MATCH1%%MATCH2%"
+          END
+        END
+        ~%replace%~
+        BUT_ONLY
+
+    END
+
+  END
+
+END
