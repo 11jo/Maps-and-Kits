@@ -9,12 +9,6 @@
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 
 /////                                                  \\\\\
-///// remove monk kits, mod                          \\\\\
-/////                                                  \\\\\
-
-LAF cd_mkr INT_VAR remove_orig = 0 STR_VAR class = mn END
-
-/////                                                  \\\\\
 ///// remove monk kits, all                          \\\\\
 /////                                                  \\\\\
 

@@ -9,12 +9,6 @@
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 
 /////                                                  \\\\\
-///// remove thief kits, mod                          \\\\\
-/////                                                  \\\\\
-
-LAF cd_mkr INT_VAR remove_orig = 0 STR_VAR class = t END
-
-/////                                                  \\\\\
 ///// remove thief kits, all                          \\\\\
 /////                                                  \\\\\
 

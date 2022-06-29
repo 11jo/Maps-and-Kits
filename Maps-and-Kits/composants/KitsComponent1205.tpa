@@ -1,4 +1,4 @@
-// KitsComponent10.tpa
+// KitsComponent12.tpa
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -9,8 +9,8 @@
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 
 /////                                                  \\\\\
-///// remove sorcerer kits, all                          \\\\\
+///// remove shaman kits, mod                          \\\\\
 /////                                                  \\\\\
 
-LAF cd_mkr INT_VAR remove_orig = 1 STR_VAR class = s END
+LAF cd_mkr INT_VAR remove_orig = 0 STR_VAR class = sh END
 

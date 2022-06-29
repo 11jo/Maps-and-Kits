@@ -1,4 +1,4 @@
-// KitsComponent10.tpa
+// KitsComponent04.tpa
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -9,8 +9,8 @@
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 
 /////                                                  \\\\\
-///// remove sorcerer kits, all                          \\\\\
+///// remove ranger kits, mod                          \\\\\
 /////                                                  \\\\\
 
-LAF cd_mkr INT_VAR remove_orig = 1 STR_VAR class = s END
+LAF cd_mkr INT_VAR remove_orig = 0 STR_VAR class = r END
 

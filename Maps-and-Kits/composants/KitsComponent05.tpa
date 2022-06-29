@@ -9,12 +9,6 @@
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 
 /////                                                  \\\\\
-///// remove fighter kits, mod                          \\\\\
-/////                                                  \\\\\
-
-LAF cd_mkr INT_VAR remove_orig = 0 STR_VAR class = f END
-
-/////                                                  \\\\\
 ///// remove fighter kits, all                          \\\\\
 /////                                                  \\\\\
 
