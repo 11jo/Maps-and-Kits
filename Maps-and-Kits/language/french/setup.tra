@@ -5,9 +5,12 @@
 /////                                                  \\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+@1  = ~Voulez-vous desactiver tous les kits pour toutes les classes de l'écran de création du personnage et Ajouter toutes les maps existantes à la CLUA console~
+@2  = ~Ce composant est deja installe~
 
+@11  = ~~
 @14  = ~Areas Cheats~
-@15  = ~Suppression de kits~
+
 @16  = ~Ce composant n'est pas disponible pour votre jeu.~
 
 
@@ -19,25 +22,43 @@
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 
-@5000 = ~Desactiver seulement les kits issus d'autres mods~
-@5001 = ~Desactiver tous les kits~
-@5002 = ~Desactiver les kits de Clerc~
-@5003 = ~Desactiver les kits de Druide~
-@5004 = ~Desactiver les kits de Paladin~
-@5005 = ~Desactiver les kits de Rodeur~
-@5006 = ~Desactiver les kits de Guerrier~
-@5007 = ~Desactiver les kits de Magicien~
-@5008 = ~Desactiver les kits de Moine~
-@5009 = ~Desactiver les kits de Voleur~
-@5010 = ~Desactiver les kits de Barde~
-@5011 = ~Desactiver les kits d'Ensorceleur~
-@5012 = ~Desactiver les kits de Barbare~
-@5013 = ~Desactiver les kits de Chaman~
+@5000 = ~~
+@5001 = ~~
+@5002 = ~Desactiver TOUS les kits de Clerc~
+@5003 = ~Desactiver TOUS les kits de Druide~
+@5004 = ~Desactiver TOUS les kits de Paladin~
+@5005 = ~Desactiver TOUS les kits de Rodeur~
+@5006 = ~Desactiver TOUS les kits de Guerrier~
+@5007 = ~Desactiver TOUS les kits de Magicien~
+@5008 = ~Desactiver TOUS les kits de Moine~
+@5009 = ~Desactiver TOUS les kits de Voleur~
+@5010 = ~Desactiver TOUS les kits de Barde~
+@5011 = ~Desactiver TOUS les kits d'Ensorceleur~
+@5012 = ~Desactiver TOUS les kits de Barbare~
+@5013 = ~Desactiver TOUS les kits de Chaman~
+
+@6002 = ~Desactiver UNIQUEMENT les kits de Clerc ajoutes par des mods~
+@6003 = ~Desactiver UNIQUEMENT les kits de Druide ajoutes par des mods~
+@6004 = ~Desactiver UNIQUEMENT les kits de Paladin ajoutes par des mods~
+@6005 = ~Desactiver UNIQUEMENT les kits de Rodeur ajoutes par des mods~
+@6006 = ~Desactiver UNIQUEMENT les kits de Guerrier ajoutes par des mods~
+@6007 = ~Desactiver UNIQUEMENT les kits de Magicien ajoutes par des mods~
+@6008 = ~Desactiver UNIQUEMENT les kits de Moine ajoutes par des mods~
+@6009 = ~Desactiver UNIQUEMENT les kits de Voleur ajoutes par des mods~
+@6010 = ~Desactiver UNIQUEMENT les kits de Barde ajoutes par des mods~
+@6011 = ~Desactiver UNIQUEMENT les kits d'Ensorceleur ajoutes par des mods~
+@6012 = ~Desactiver UNIQUEMENT les kits de Barbare ajoutes par des mods~
+@6013 = ~Desactiver UNIQUEMENT les kits de Chaman ajoutes par des mods~
 
 //////////////////////////////
 // bgee.lua cheat table
 //////////////////////////////
 @5100 = ~Installer Areas Cheats (Les mods ajoutant des nouvelles cartes doivent etres installes avant ce composant)~
+
+// Ooze’s Lounge // Lava
+@10000 = ~OOZE'S - Prêtre de Juiblex fou~
+@10001 = ~OOZE'S - loge~
+@10002 = ~OOZE'S - Souterrain~
 
 // WeiDU prompts
 @-1000= "Le mod %TP2_FILE_NAME% contient"
