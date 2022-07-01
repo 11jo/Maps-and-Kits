@@ -5,14 +5,37 @@
 /////                                                  \\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
-@1  = ~Voulez-vous desactiver tous les kits pour toutes les classes de l'écran de création du personnage et Ajouter toutes les maps existantes à la CLUA console~
+@1  = ~Voulez-vous MASQUER TOUS LES KITS POUR TOUTES LES CLASSES de l'ecran de creation du personnage~
 @2  = ~Ce composant est deja installe~
+@3  = ~Au moins un des composants est deja installe~
+@4  = ~Ce composant n'est pas disponible pour votre jeu.~
 
-@11  = ~~
-@14  = ~Areas Cheats~
+//////////////////////////////
+// bgee.lua cheat table
+//////////////////////////////
+@10 = ~~
+@11 = ~~
+@12 = ~~
+@13 = ~~
+@14 = ~Voulez-vous ajouter TOUTES LES MAPS existantes a la CLUA Console (Les MODS ajoutant de NOUVELLES CARTES doivent etres INSTALLES AVANT ce composant)~
+@15 = ~Installer AREAS CHEATS pour EET~
+@16 = ~Installer AREAS CHEATS pour BGEE~
+@17 = ~Installer AREAS CHEATS pour SoD~
+@18 = ~Installer AREAS CHEATS pour B2EE~
+@19 = ~Installer AREAS CHEATS pour les MODS~
 
-@16  = ~Ce composant n'est pas disponible pour votre jeu.~
-
+@20  = ~Quelle categorie de kits de Clerc souhaitez-vous MASQUER~
+@21  = ~Quelle categorie de kits de Druide souhaitez-vous MASQUER~
+@22  = ~Quelle categorie de kits de Paladin souhaitez-vous MASQUER~
+@23  = ~Quelle categorie de kits de Rodeur souhaitez-vous MASQUER~
+@24  = ~Quelle categorie de kits de Guerrier souhaitez-vous MASQUER~
+@25  = ~Quelle categorie de kits de Magicien souhaitez-vous MASQUER~
+@26  = ~Quelle categorie de kits de Moine souhaitez-vous MASQUER~
+@27  = ~Quelle categorie de kits de Voleur souhaitez-vous MASQUER~
+@28  = ~Quelle categorie de kits de Barde souhaitez-vous MASQUER~
+@29  = ~Quelle categorie de kits d'Ensorceleur souhaitez-vous MASQUER~
+@30  = ~Quelle categorie de kits de Barbare souhaitez-vous MASQUER~
+@31  = ~Quelle categorie de kits de Chaman souhaitez-vous MASQUER~
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -21,6 +44,19 @@
 /////                                                  \\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+@20  = ~Quelle categorie de kits de Clerc souhaitez-vous MASQUER~
+@21  = ~Quelle categorie de kits de Druide souhaitez-vous MASQUER~
+@22  = ~Quelle categorie de kits de Paladin souhaitez-vous MASQUER~
+@23  = ~Quelle categorie de kits de Rodeur souhaitez-vous MASQUER~
+@24  = ~Quelle categorie de kits de Guerrier souhaitez-vous MASQUER~
+@25  = ~Quelle categorie de kits de Magicien souhaitez-vous MASQUER~
+@26  = ~Quelle categorie de kits de Moine souhaitez-vous MASQUER~
+@27  = ~Quelle categorie de kits de Voleur souhaitez-vous MASQUER~
+@28  = ~Quelle categorie de kits de Barde souhaitez-vous MASQUER~
+@29  = ~Quelle categorie de kits d'Ensorceleur souhaitez-vous MASQUER~
+@30  = ~Quelle categorie de kits de Barbare souhaitez-vous MASQUER~
+@31  = ~Quelle categorie de kits de Chaman souhaitez-vous MASQUER~
 
 @5000 = ~~
 @5001 = ~~
@@ -49,11 +85,6 @@
 @6011 = ~Desactiver UNIQUEMENT les kits d'Ensorceleur ajoutes par des mods~
 @6012 = ~Desactiver UNIQUEMENT les kits de Barbare ajoutes par des mods~
 @6013 = ~Desactiver UNIQUEMENT les kits de Chaman ajoutes par des mods~
-
-//////////////////////////////
-// bgee.lua cheat table
-//////////////////////////////
-@5100 = ~Installer Areas Cheats (Les mods ajoutant des nouvelles cartes doivent etres installes avant ce composant)~
 
 // Ooze’s Lounge // Lava
 @10000 = ~OOZE'S - Prêtre de Juiblex fou~
