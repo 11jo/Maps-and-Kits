@@ -5,10 +5,15 @@
 /////                                                  \\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
-@1  = ~Voulez-vous MASQUER TOUS LES KITS POUR TOUTES LES CLASSES de l'ecran de creation du personnage~
+@1  = ~MASQUER TOUS LES KITS POUR TOUTES LES CLASSES de l'ecran de creation du personnage~
 @2  = ~Ce composant est deja installe~
 @3  = ~Au moins un des composants est deja installe~
 @4  = ~Ce composant n'est pas disponible pour votre jeu.~
+@5  = ~Ce composant necessite EET.~
+@6  = ~Ce composant necessite BGEE.~
+@7  = ~Ce composant necessite SOD.~
+@8  = ~Ce composant necessite BG2EE.~
+@9  = ~Ce composant necessite Modmerge ou DLC Merger d'Argent77 avant de pouvoir etre installes sur ce jeu.~
 
 //////////////////////////////
 // bgee.lua cheat table
@@ -17,12 +22,12 @@
 @11 = ~~
 @12 = ~~
 @13 = ~~
-@14 = ~Voulez-vous ajouter TOUTES LES MAPS existantes a la CLUA Console (Les MODS ajoutant de NOUVELLES CARTES doivent etres INSTALLES AVANT ce composant)~
-@15 = ~Installer AREAS CHEATS pour EET~
-@16 = ~Installer AREAS CHEATS pour BGEE~
-@17 = ~Installer AREAS CHEATS pour SoD~
-@18 = ~Installer AREAS CHEATS pour B2EE~
-@19 = ~Installer AREAS CHEATS pour les MODS~
+@14 = ~Ajouter TOUTES LES MAPS existantes a la CLUA Console (Les MODS ajoutant de NOUVELLES CARTES doivent etres INSTALLES AVANT ce composant)~
+@15 = ~AREAS CHEATS pour EET~
+@16 = ~AREAS CHEATS pour BGEE~
+@17 = ~AREAS CHEATS pour SoD~
+@18 = ~AREAS CHEATS pour BG2EE~
+@19 = ~AREAS CHEATS pour les MODS~
 
 @20  = ~Quelle categorie de kits de Clerc souhaitez-vous MASQUER~
 @21  = ~Quelle categorie de kits de Druide souhaitez-vous MASQUER~

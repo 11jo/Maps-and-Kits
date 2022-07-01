@@ -126,34 +126,47 @@ BEGIN @1  // Install all components at once
     INCLUDE ~Maps-and-Kits/composants/KitsComponent12.tpa~
   END  
 
-BEGIN @14  // Install all components at once
-  FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 14 @2 // Ce composant est deja installe
-  DESIGNATED 1
-  
-  ACTION_IF (NOT MOD_IS_INSTALLED ~setup-Maps-and-Kits.tp2~ 15) BEGIN  // 1 composant pour chaque... regarder divine remix....
+ ACTION_IF ((FILE_EXISTS ~dlc/sod-dlc.zip~) OR (FILE_EXISTS ~sod-dlc.zip~)) THEN BEGIN FAIL @9 END // DLC Merger check
+
+BEGIN @15
+  FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 2 @2 // Ce composant est deja installe
+  DESIGNATED 2
+    REQUIRE_PREDICATE GAME_IS ~EET~ @5
+
     INCLUDE ~Maps-and-Kits/composants/MapsComponentEET.tpa~ 
-  END /* (GAME_IS ~EET~) */
-  
-/* 
-  ACTION_IF (NOT MOD_IS_INSTALLED ~setup-Maps-and-Kits.tp2~ 16) BEGIN // 1 composant pour chaque... regarder divine remix....
-  ACTION_IF GAME_IS ~BGEE~ THEN BEGIN
+
+BEGIN @16
+  FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 3 @2 // Ce composant est deja installe
+  FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 2 @2 // Ce composant est deja installe
+  DESIGNATED 3
+    REQUIRE_PREDICATE GAME_IS ~BGEE~ @6
+
     INCLUDE ~Maps-and-Kits/composants/MapsComponentBGEE.tpa~
-  END
-  
-  ACTION_IF (NOT MOD_IS_INSTALLED ~setup-Maps-and-Kits.tp2~ 17) BEGIN // 1 composant pour chaque... regarder divine remix....
-  ACTION_IF GAME_IS ~BGEE SoD~ THEN BEGIN
-    INCLUDE ~Maps-and-Kits/composants/MapsComponentSoD.tpa~
-  END
-    
-  ACTION_IF (NOT MOD_IS_INSTALLED ~setup-Maps-and-Kits.tp2~ 18) BEGIN // 1 composant pour chaque... regarder divine remix....
-  ACTION_IF GAME_IS ~BG2EE~ THEN BEGIN
+ 
+ ACTION_IF ((FILE_EXISTS ~dlc/sod-dlc.zip~) OR (FILE_EXISTS ~sod-dlc.zip~)) THEN BEGIN FAIL @9 END // DLC Merger check
+	
+BEGIN @17
+  FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 4 @2 // Ce composant est deja installe
+  FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 2 @2 // Ce composant est deja installe
+  DESIGNATED 4
+    REQUIRE_PREDICATE GAME_IS ~BGEE SOD~ @7
+
+    INCLUDE ~Maps-and-Kits/composants/MapsComponentSOD.tpa~
+	
+BEGIN @18
+  FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 5 @2 // Ce composant est deja installe
+  FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 2 @2 // Ce composant est deja installe
+  DESIGNATED 5
+    REQUIRE_PREDICATE GAME_IS ~BG2EE~ @8
+
     INCLUDE ~Maps-and-Kits/composants/MapsComponentBG2EE.tpa~
-  END
-  
-  ACTION_IF (NOT MOD_IS_INSTALLED ~setup-Maps-and-Kits.tp2~ 18) BEGIN // 1 composant pour chaque... regarder divine remix....
+	
+BEGIN @19
+  FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 6 @2
+  DESIGNATED 6
+    REQUIRE_PREDICATE GAME_IS ~BG2EE EET BGEE SOD~ @4
+
     INCLUDE ~Maps-and-Kits/composants/MapsComponentMods.tpa~
-  END
-*/
   
 BEGIN @5002 // Composant 1
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 0 @2 // Ce composant est deja installe
@@ -310,11 +323,4 @@ BEGIN @6013 // Composant 12.5
   SUBCOMPONENT @31
 
   INCLUDE ~Maps-and-Kits/composants/KitsComponent1205.tpa~  
-/* 
-BEGIN @14 // Composant 14
-  FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 1 @2 // Ce composant est deja installe
-  DESIGNATED 14
 
-  INCLUDE ~Maps-and-Kits/composants/MapsComponent.tpa~
-  
-  Composants EET, SoD, BGEE, BG2EE et mods avec Game_Is....*/
