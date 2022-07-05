@@ -61,7 +61,7 @@ APPEND ~kit.ids~ ~0x40000000 BARBARIAN~ UNLESS ~\bBARBARIAN\b~
 APPEND ~kit.ids~ ~0x80000000 WILDMAGE~  UNLESS ~\bWILDMAGE\b~
 
 ACTION_IF NOT FILE_EXISTS_IN_GAME ~shoutids.ids~ THEN BEGIN
-  COPY ~Maps-and-Kits/ids/Divine/shoutids.ids~ ~override~
+  COPY ~Maps-and-Kits/lib/Borrow/Divine/shoutids.ids~ ~override~
 END
 
 // couple of base bg2 spells that don't have IDS entries

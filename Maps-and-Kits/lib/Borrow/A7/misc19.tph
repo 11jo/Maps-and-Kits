@@ -1,14 +1,14 @@
 // expanding areas list for debug console
 ACTION_CLEAR_ARRAY ~lines~
-COPY ~%MOD_FOLDER%/lib/A7/Mods-append.lua~ ~%MOD_FOLDER%/lib/A7/Mods-append.lua~
+COPY ~%MOD_FOLDER%/lib/Lua/M_ModsFr.lua~ ~%MOD_FOLDER%/lib/Lua/M_ModsFr.lua~
   LPF READ_TEXT_LINES RET lines RET_ARRAY lines END
 BUT_ONLY
 
-COPY_EXISTING ~bgee.lua~ ~override~
-  PATCH_IF (GAME_IS ~bgee~ ) BEGIN
+COPY_EXISTING ~M_MapsFr.lua~ ~override~
+  PATCH_IF (GAME_IS ~bgee bg2ee eet~ ) BEGIN
     TEXT_SPRINT cheatAreas ~cheatAreasExpansion~
   END ELSE BEGIN
-    TEXT_SPRINT cheatAreas ~cheatAreas~
+    TEXT_SPRINT cheatAreas ~cheatAreas~/*cheatAreasMods*/
   END
   SET pos_start = INDEX_BUFFER(~^[ %TAB%]*%cheatAreas%[ %TAB%]*=[ %TAB%]*{[ %TAB%]*[%WNL%]~)
   PATCH_IF (pos_start >= 0) BEGIN

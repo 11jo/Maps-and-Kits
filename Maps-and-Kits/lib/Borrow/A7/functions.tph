@@ -1,4 +1,4 @@
-INCLUDE ~%MOD_FOLDER%/lib/A7/a7_pvrz.tpa~
+INCLUDE ~%MOD_FOLDER%/lib/Borrow/A7/a7_pvrz.tpa~
 
 // Reads all lines from the current text file into an array.
 DEFINE_PATCH_FUNCTION READ_TEXT_LINES

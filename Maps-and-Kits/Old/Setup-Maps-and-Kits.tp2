@@ -4,16 +4,16 @@ SUPPORT ~~
 
 ALWAYS
 
-  INCLUDE ~Maps-and-Kits/lib/Borrow/Divine/macros.tph~ // defines patch macro
-  INCLUDE ~Maps-and-Kits/lib/Borrow/A7/a7#add_kit_ex.tpa~         // for ee kit features
-  INCLUDE ~%MOD_FOLDER%/lib/Borrow/A7/functions.tph~
+  INCLUDE ~Maps-and-Kits/lib/Divine/macros.tph~ // defines patch macro
+  INCLUDE ~Maps-and-Kits/lib/A7/a7#add_kit_ex.tpa~         // for ee kit features
+  INCLUDE ~%MOD_FOLDER%/lib/A7/functions.tph~
   OUTER_SET bio = "-1"
 
   ACTION_IF NOT VARIABLE_IS_SET cd_always THEN BEGIN
 
     OUTER_SET cd_always = 1 // just do this part once per install
 
-    INCLUDE ~Maps-and-Kits/lib/Borrow/Divine/ids_stuff.tph~             // ids fixes
+    INCLUDE ~Maps-and-Kits/lib/Divine/ids_stuff.tph~             // ids fixes
 /*
 ACTION_DEFINE_ARRAY 9xnoconvert BEGIN END
 ACTION_DEFINE_ARRAY 9xreload BEGIN setup END
@@ -51,7 +51,7 @@ LANGUAGE
   ~Maps-and-Kits/language/english/setup.tra~
   ~Maps-and-Kits/language/english/Maps-and-Kits.tra~
 
-BEGIN @1  // Install all components at once // Dans ce cas tous les Kits déjà installés sont masqués pour faire de la place à de nouveaux.
+BEGIN @1  // Install all components at once
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 5002 @3
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 5003 @3
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 5004 @3
@@ -133,7 +133,10 @@ BEGIN @15
   DESIGNATED 2
     REQUIRE_PREDICATE GAME_IS ~EET~ @5
 
-    COPY ~Maps-and-Kits/lib/Lua/EET/M_MapsFr.lua~ ~override/M_MapsFr.lua~ // CheatsAreas pour EET
+    INCLUDE ~Maps-and-Kits/composants/MapsComponentEET.tpa~ 
+	/*INCLUDE ~Maps-and-Kits/composants/MapsComponentBGEE.tpa~
+	INCLUDE ~Maps-and-Kits/composants/MapsComponentSOD.tpa~
+	INCLUDE ~Maps-and-Kits/composants/MapsComponentBG2EE.tpa~*/
 
 BEGIN @16
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 3 @2 // Ce composant est deja installe
@@ -141,7 +144,7 @@ BEGIN @16
   DESIGNATED 3
     REQUIRE_PREDICATE GAME_IS ~BGEE~ @6
 
-    COPY ~Maps-and-Kits/lib/Lua/BGEE/M_MapsFr.lua~ ~override/M_MapsFr.lua~  // CheatsAreas pour BGEE
+    INCLUDE ~Maps-and-Kits/composants/MapsComponentBGEE.tpa~
  
  ACTION_IF ((FILE_EXISTS ~dlc/sod-dlc.zip~) OR (FILE_EXISTS ~sod-dlc.zip~)) THEN BEGIN FAIL @9 END // DLC Merger check
 	
@@ -151,7 +154,7 @@ BEGIN @17
   DESIGNATED 4
     REQUIRE_PREDICATE GAME_IS ~BGEE SOD~ @7
 
-    COPY ~Maps-and-Kits/lib/Lua/SoD/M_MapsFr.lua~ ~override/M_MapsFr.lua~ // CheatsAreas pour SoD
+    INCLUDE ~Maps-and-Kits/composants/MapsComponentSOD.tpa~
 	
 BEGIN @18
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 5 @2 // Ce composant est deja installe
@@ -159,168 +162,168 @@ BEGIN @18
   DESIGNATED 5
     REQUIRE_PREDICATE GAME_IS ~BG2EE~ @8
 
-    COPY ~Maps-and-Kits/lib/Lua/BG2EE/M_MapsBG2eeFr.lua~ ~override/M_MapsFr.lua~ // CheatsAreas pour BG2EE
-/*	
+    INCLUDE ~Maps-and-Kits/composants/MapsComponentBG2EE.tpa~
+	
 BEGIN @19
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 6 @2
   DESIGNATED 6
     REQUIRE_PREDICATE GAME_IS ~BG2EE EET BGEE SOD~ @4
 
-    INCLUDE ~Maps-and-Kits/composants/MapsComponentMods.tpa~  // CheatsAreas pour les mods*/
+    INCLUDE ~Maps-and-Kits/composants/MapsComponentMods.tpa~
   
 BEGIN @5002 // Composant 1
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 0 @2 // Ce composant est deja installe
-  SUBCOMPONENT @20 // Désactiver TOUS les kits de clerc
+  SUBCOMPONENT @20 // Desactiver TOUS les kits de clerc
   
   INCLUDE ~Maps-and-Kits/composants/KitsComponent01.tpa~
   
 BEGIN @6002 // Composant 1.5
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 0 @2 // Ce composant est deja installe
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 5002 @2 // Ce composant est deja installe
-  SUBCOMPONENT @20  // Désactiver UNIQUEMENT les kits de clerc ajoutes par des mods
+  SUBCOMPONENT @20  // Desactiver UNIQUEMENT les kits de clerc ajoutes par des mods
 
   INCLUDE ~Maps-and-Kits/composants/KitsComponent0105.tpa~
   
 BEGIN @5003 // Composant 2
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 0 @2 // Ce composant est deja installe
-  SUBCOMPONENT @21 // Désactiver TOUS les kits de Druide
+  SUBCOMPONENT @21
 
   INCLUDE ~Maps-and-Kits/composants/KitsComponent02.tpa~
   
 BEGIN @6003 // Composant 2.5
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 0 @2 // Ce composant est deja installe
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 5003 @2 // Ce composant est deja installe
-  SUBCOMPONENT @21 // Désactiver UNIQUEMENT les kits de Druide des mods
+  SUBCOMPONENT @21
 
   INCLUDE ~Maps-and-Kits/composants/KitsComponent0205.tpa~
 
 BEGIN @5004 // Composant 3
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 0 @2 // Ce composant est deja installe
-  SUBCOMPONENT @22 // Désactiver TOUS les kits de paladin
+  SUBCOMPONENT @22
 
   INCLUDE ~Maps-and-Kits/composants/KitsComponent03.tpa~
   
 BEGIN @6004 // Composant 3.5
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 0 @2 // Ce composant est deja installe
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 5004 @2 // Ce composant est deja installe
-  SUBCOMPONENT @22 // Désactiver UNIQUEMENT les kits de paladin des mods
+  SUBCOMPONENT @22
 
   INCLUDE ~Maps-and-Kits/composants/KitsComponent0305.tpa~
 
 BEGIN @5005 // Composant 4
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 0 @2 // Ce composant est deja installe
-  SUBCOMPONENT @23 // Désactiver TOUS les kits de rôdeur
+  SUBCOMPONENT @23
 
   INCLUDE ~Maps-and-Kits/composants/KitsComponent04.tpa~
   
 BEGIN @6005 // Composant 4.5
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 0 @2 // Ce composant est deja installe
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 5005 @2 // Ce composant est deja installe
-  SUBCOMPONENT @23 // Désactiver UNIQUEMENT les kits de rôdeur des mods
+  SUBCOMPONENT @23
 
   INCLUDE ~Maps-and-Kits/composants/KitsComponent0405.tpa~
 
 BEGIN @5006 // Composant 5
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 0 @2 // Ce composant est deja installe
-  SUBCOMPONENT @24 // Désactiver TOUS les kits guerrier
+  SUBCOMPONENT @24
 
   INCLUDE ~Maps-and-Kits/composants/KitsComponent05.tpa~
   
 BEGIN @6006 // Composant 5.5
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 0 @2 // Ce composant est deja installe
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 5006 @2 // Ce composant est deja installe
-  SUBCOMPONENT @24 // Désactiver UNIQUEMENT les kits de guerrier des mods
+  SUBCOMPONENT @24
 
   INCLUDE ~Maps-and-Kits/composants/KitsComponent0505.tpa~
 
 BEGIN @5007 // Composant 6
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 0 @2 // Ce composant est deja installe
-  SUBCOMPONENT @25 // Désactiver TOUS les kits de magicien
+  SUBCOMPONENT @25
 
   INCLUDE ~Maps-and-Kits/composants/KitsComponent06.tpa~
   
 BEGIN @6007 // Composant 6.5
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 0 @2 // Ce composant est deja installe
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 5007 @2 // Ce composant est deja installe
-  SUBCOMPONENT @25 // Désactiver UNIQUEMENT les kits de magicien des mods
+  SUBCOMPONENT @25
 
   INCLUDE ~Maps-and-Kits/composants/KitsComponent0605.tpa~
 
 BEGIN @5008 // Composant 7
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 0 @2 // Ce composant est deja installe
-  SUBCOMPONENT @26 // Désactiver TOUS les kits de moine
+  SUBCOMPONENT @26
 
   INCLUDE ~Maps-and-Kits/composants/KitsComponent07.tpa~
   
 BEGIN @6008 // Composant 7.5
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 0 @2 // Ce composant est deja installe
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 5008 @2 // Ce composant est deja installe
-  SUBCOMPONENT @26 // Désactiver UNIQUEMENT les kits de moine des mods
+  SUBCOMPONENT @26
 
   INCLUDE ~Maps-and-Kits/composants/KitsComponent0705.tpa~
 
 BEGIN @5009 // Composant 8
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 0 @2 // Ce composant est deja installe
-  SUBCOMPONENT @27 // Désactiver TOUS les kits de voleur
+  SUBCOMPONENT @27
 
   INCLUDE ~Maps-and-Kits/composants/KitsComponent08.tpa~
   
 BEGIN @6009 // Composant 8.5
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 0 @2 // Ce composant est deja installe
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 5009 @2 // Ce composant est deja installe
-  SUBCOMPONENT @27 // Désactiver UNIQUEMENT les kits de voleur des mods
+  SUBCOMPONENT @27
 
   INCLUDE ~Maps-and-Kits/composants/KitsComponent0805.tpa~
 
 BEGIN @5010 // Composant 9
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 0 @2 // Ce composant est deja installe
-  SUBCOMPONENT @28 // Désactiver TOUS les kits de barde
+  SUBCOMPONENT @28
 
   INCLUDE ~Maps-and-Kits/composants/KitsComponent09.tpa~
   
 BEGIN @6010 // Composant 9.5
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 0 @2 // Ce composant est deja installe
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 5010 @2 // Ce composant est deja installe
-  SUBCOMPONENT @28 // Désactiver UNIQUEMENT les kits de barde des mods
+  SUBCOMPONENT @28
 
   INCLUDE ~Maps-and-Kits/composants/KitsComponent0905.tpa~
 
 BEGIN @5011 // Composant 10
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 0 @2 // Ce composant est deja installe
-  SUBCOMPONENT @29 // Désactiver TOUS les kits d'ensorceleur
+  SUBCOMPONENT @29
 
   INCLUDE ~Maps-and-Kits/composants/KitsComponent10.tpa~
   
 BEGIN @6011 // Composant 10.5
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 0 @2 // Ce composant est deja installe
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 5011 @2 // Ce composant est deja installe
-  SUBCOMPONENT @29 // Désactiver UNIQUEMENT les kits d'ensorceleur des mods
+  SUBCOMPONENT @29
 
   INCLUDE ~Maps-and-Kits/composants/KitsComponent1005.tpa~
 
 BEGIN @5012 // Composant 11
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 0 @2 // Ce composant est deja installe
-  SUBCOMPONENT @30 // Désactiver TOUS les kits de barbare
+  SUBCOMPONENT @30
 
   INCLUDE ~Maps-and-Kits/composants/KitsComponent11.tpa~
   
 BEGIN @6012 // Composant 11.5
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 0 @2 // Ce composant est deja installe
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 5012 @2 // Ce composant est deja installe
-  SUBCOMPONENT @30 // Désactiver UNIQUEMENT les kits de barbare des mods
+  SUBCOMPONENT @30
 
   INCLUDE ~Maps-and-Kits/composants/KitsComponent1105.tpa~
 
 BEGIN @5013 // Composant 12
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 0 @2 // Ce composant est deja installe
-  SUBCOMPONENT @31 // Désactiver TOUS les kits de chaman
+  SUBCOMPONENT @31
 
   INCLUDE ~Maps-and-Kits/composants/KitsComponent12.tpa~
   
 BEGIN @6013 // Composant 12.5
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 0 @2 // Ce composant est deja installe
   FORBID_COMPONENT ~setup-Maps-and-Kits.tp2~ 5013 @2 // Ce composant est deja installe
-  SUBCOMPONENT @31 // Désactiver UNIQUEMENT les kits de chaman des mods
+  SUBCOMPONENT @31
 
   INCLUDE ~Maps-and-Kits/composants/KitsComponent1205.tpa~  
 
